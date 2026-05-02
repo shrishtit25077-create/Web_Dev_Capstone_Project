@@ -87,3 +87,4 @@ primaryBtn.onclick = function () {
 secondaryBtn.onclick = function () {
     alert("Resuming your quiz...");
 };
+
