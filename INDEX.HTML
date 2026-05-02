@@ -6,16 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusHub Dashboard</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+
     <!-- Sidebar -->
-
     <div class="sidebar">
-
 
         <div class="logo">
             <img src="icons/logo.png" class="logo-icon">
@@ -24,60 +22,57 @@
 
         <div class="menu">
 
-            <div class="menu-item active">
+            <a href="index.html" class="menu-item active">
                 <img src="icons/dashboard.png">
                 <span>Dashboard</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="assignment.html" class="menu-item">
                 <img src="icons/book.png">
                 <span>Assignments</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="coding.html" class="menu-item">
                 <img src="icons/code.png">
                 <span>Coding Lab</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="#" class="menu-item">
                 <img src="icons/quiz.png">
                 <span>Quiz Center</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="#" class="menu-item">
                 <img src="icons/chart.png">
                 <span>Performance</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="#" class="menu-item">
                 <img src="icons/notes.png">
                 <span>Notes</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="#" class="menu-item">
                 <img src="icons/calendar.png">
                 <span>Calendar</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="#" class="menu-item">
                 <img src="icons/user.png">
                 <span>Profile</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="#" class="menu-item">
                 <img src="icons/settings.png">
                 <span>Admin</span>
-            </div>
+            </a>
 
         </div>
-
 
     </div>
 
     <!-- Main -->
-
     <div class="main">
-
 
         <!-- Navbar -->
         <div class="navbar">
@@ -113,76 +108,78 @@
 
         </div>
 
-        <!-- Welcome -->
-        <div class="welcome">
+        <!-- Content Wrapper -->
+        <div class="content">
 
-            <h1>Good Morning, Student</h1>
-            <p>You have <b>3 pending assignments</b> and <b>1 upcoming test</b> this week.</p>
+            <!-- Welcome -->
+            <div class="welcome">
+                <h1>Good Morning, Student</h1>
+                <p>You have <b>3 pending assignments</b> and <b>1 upcoming test</b> this week.</p>
 
-            <div class="welcome-buttons">
+                <div class="welcome-buttons">
+                    <button type="button" class="primary">
+                        <img src="icons/upload.png">
+                        Submit Assignment
+                    </button>
 
-                <button class="primary">
-                    <img src="icons/upload.png">
-                    Submit Assignment
-                </button>
+                    <button type="button" class="secondary">
+                        <img src="icons/play.png">
+                        Resume Quiz
+                    </button>
+                </div>
+            </div>
 
-                <button class="secondary">
-                    <img src="icons/play.png">
-                    Resume Quiz
-                </button>
+            <!-- Cards -->
+            <div class="cards">
+
+                <div class="card">
+                    <div>
+                        <p>Pending Assignments</p>
+                        <h2>12</h2>
+                    </div>
+                    <div class="icon orange">
+                        <img src="icons/time.png">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <p>Completed Tasks</p>
+                        <h2>45</h2>
+                    </div>
+                    <div class="icon green">
+                        <img src="icons/check.png">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <p>Upcoming Tests</p>
+                        <h2>3</h2>
+                    </div>
+                    <div class="icon red">
+                        <img src="icons/file.png">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <p>Average Score</p>
+                        <h2>92%</h2>
+                    </div>
+                    <div class="icon purple">
+                        <img src="icons/graph.png">
+                    </div>
+                </div>
 
             </div>
 
         </div>
-
-        <!-- Cards -->
-        <div class="cards">
-
-            <div class="card">
-                <div>
-                    <p>Pending Assignments</p>
-                    <h2>12</h2>
-                </div>
-                <div class="icon orange">
-                    <img src="icons/time.png">
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <p>Completed Tasks</p>
-                    <h2>45</h2>
-                </div>
-                <div class="icon green">
-                    <img src="icons/check.png">
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <p>Upcoming Tests</p>
-                    <h2>3</h2>
-                </div>
-                <div class="icon red">
-                    <img src="icons/file.png">
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <p>Average Score</p>
-                    <h2>92%</h2>
-                </div>
-                <div class="icon purple">
-                    <img src="icons/graph.png">
-                </div>
-            </div>
-
-        </div>
-
 
     </div>
+
     <script src="script.js"></script>
+
 
 </body>
 
