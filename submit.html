@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">CampusHub</div>
+        <div class="menu">
+            <a href="index.html" class="menu-item">Dashboard</a>
+            <a href="assignment.html" class="menu-item active">Assignments</a>
+            <a href="coding.html" class="menu-item">Coding Lab</a>
+            <a href="#" class="menu-item">Quiz Center</a>
+            <a href="#" class="menu-item">Performance</a>
+            <a href="#" class="menu-item">Notes</a>
+            <a href="#" class="menu-item">Calendar</a>
+            <a href="#" class="menu-item">Profile</a>
+            <a href="#" class="menu-item">Admin</a>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <div class="navbar">
+            <div class="search">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+
+        <div class="content">
+            <h2 class="page-title">Submit Assignment</h2>
+
+            <div class="form-card">
+
+                <div class="form-group">
+                    <label>Assignment Title</label>
+                    <input type="text" placeholder="Enter title">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea placeholder="Write about your submission"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="file-upload">Upload File</label>
+                    <input type="file" id="file-upload" title="Upload your assignment file">
+                </div>
+
+                <button type="button" class="btn-primary" onclick="alert('Assignment submitted!')">Submit
+                    Assignment</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
