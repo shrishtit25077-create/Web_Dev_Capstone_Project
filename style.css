@@ -848,10 +848,23 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: conic-gradient(#22c55e 75%, #ff0000 0%);
+    background: conic-gradient(#22c55e 75%, #f00 0%);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px auto;
     font-weight: bold;
+}
+.chart-container {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 16px;
+    height: 280px; 
+}
+
+.chart-img {
+    width: 100%;
+    max-height: 380px; 
+    border-radius: 12px;
+    margin-top: 10px;
 }
