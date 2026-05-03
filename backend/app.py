@@ -56,6 +56,26 @@ def create_assignment():
 
     return res.data, 201
 
+# add new assignment 
+@app.route("/assignments", methods=["GET"])
+def get_assignments():
+    res = supabase.table("creation").select("*").execute()
+    return {"assignments": res.data}
+
+
+@app.route("/assignments", methods=["POST"])
+def add_assignment():
+    data = request.get_json()
+
+    new_assignment = {
+        "title": data["title"],
+        "description": data["description"],
+    }
+
+    res = supabase.table("creation").insert(new_assignment).execute()
+
+    return res.data
+
 
 # ---------------- RUN ---------------- #
 if __name__ == "__main__":

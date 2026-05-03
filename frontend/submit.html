@@ -56,6 +56,7 @@
         </div>
     </div>
 
+
     <!-- Main -->
     <div class="main">
 
@@ -72,27 +73,60 @@
 
                 <div class="form-group">
                     <label>Assignment Title</label>
-                    <input type="text" placeholder="Enter title">
+                    <input type="text" id="title">
                 </div>
 
                 <div class="form-group">
                     <label>Description</label>
-                    <textarea placeholder="Write about your submission"></textarea>
+                    <textarea id="desc"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="file-upload">Upload File</label>
-                    <input type="file" id="file-upload" title="Upload your assignment file">
+                    <label>Upload File</label>
+                    <input type="file">
                 </div>
 
-                <button type="button" class="btn-primary" onclick="alert('Assignment submitted!')">Submit
-                    Assignment</button>
+           
+                <button type="button" class="btn-primary" onclick="submitAssignment()">
+                    Submit Assignment
+                </button>
 
             </div>
         </div>
 
     </div>
 
-</body>
+    <!-- JS -->
+    <script>
 
+    function submitAssignment() {
+
+        var title = document.getElementById("title").value;
+        var description = document.getElementById("desc").value;
+
+        fetch("http://127.0.0.1:5001/assignments", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: title,
+                description: description
+            })
+        })
+        .then(function(res) {
+            return res.json();
+        })
+        .then(function() {
+            alert("Assignment Submitted ✅");
+
+            // redirect back to assignment page
+            window.location.href = "assignment.html";
+        });
+
+    }
+
+    </script>
+
+</body>
 </html>
