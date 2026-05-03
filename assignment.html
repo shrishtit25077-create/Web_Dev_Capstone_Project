@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -11,113 +12,144 @@
 <body>
 
     <!-- Sidebar -->
-
     <div class="sidebar">
 
-
         <div class="logo">
-            <img src="icons/logo.png" class="logo-icon">
+            <img src="icons/logo.png" class="logo-icon" alt="CampusHub logo">
             <span>CampusHub</span>
         </div>
 
         <div class="menu">
 
             <a href="index.html" class="menu-item">
-                <img src="icons/dashboard.png" alt="Dashboard icon">
+                <div class="icon-box">
+                    <img src="icons/dashboard.png" alt="Dashboard">
+                </div>
                 <span>Dashboard</span>
             </a>
 
             <a href="assignment.html" class="menu-item active">
-                <img src="icons/book.png" alt="Assignments icon">
+                <div class="icon-box">
+                    <img src="icons/book.png" alt="Assignments">
+                </div>
                 <span>Assignments</span>
             </a>
 
             <a href="coding.html" class="menu-item">
-                <img src="icons/code.png" alt="Coding lab icon">
+                <div class="icon-box">
+                    <img src="icons/code.png" alt="Coding Lab">
+                </div>
                 <span>Coding Lab</span>
             </a>
 
             <a href="#" class="menu-item">
-                <img src="icons/quiz.png" alt="Quiz center icon">
+                <div class="icon-box">
+                    <img src="icons/quiz.png" alt="Quiz Center">
+                </div>
                 <span>Quiz Center</span>
             </a>
 
             <a href="#" class="menu-item">
-                <img src="icons/chart.png" alt="Performance icon">
+                <div class="icon-box">
+                    <img src="icons/chart.png" alt="Performance">
+                </div>
                 <span>Performance</span>
             </a>
 
             <a href="#" class="menu-item">
-                <img src="icons/notes.png" alt="Notes icon">
+                <div class="icon-box">
+                    <img src="icons/notes.png" alt="Notes">
+                </div>
                 <span>Notes</span>
             </a>
 
             <a href="#" class="menu-item">
-                <img src="icons/calendar.png" alt="Calendar icon">
+                <div class="icon-box">
+                    <img src="icons/calendar.png" alt="Calendar">
+                </div>
                 <span>Calendar</span>
             </a>
 
             <a href="#" class="menu-item">
-                <img src="icons/user.png" alt="Profile icon">
+                <div class="icon-box">
+                    <img src="icons/user.png" alt="Profile">
+                </div>
                 <span>Profile</span>
             </a>
 
             <a href="#" class="menu-item">
-                <img src="icons/settings.png" alt="Admin icon">
+                <div class="icon-box">
+                    <img src="icons/settings.png" alt="Admin">
+                </div>
                 <span>Admin</span>
             </a>
 
         </div>
 
-
     </div>
-
 
     <!-- Main -->
     <div class="main">
 
+        <!-- Navbar -->
         <div class="navbar">
             <div class="search">
                 <input type="text" placeholder="Search assignments...">
             </div>
         </div>
 
+        <!-- Content -->
         <div class="content">
+
             <h2 class="page-title">Assignments</h2>
 
             <div class="assignment-grid">
 
+                <!-- Assignment 1 -->
                 <div class="assignment-card">
                     <h3>Web Dev Project</h3>
                     <p>Build a responsive dashboard UI</p>
+
                     <div class="assignment-footer">
                         <span class="status pending">Pending</span>
-                        <button type="button" class="btn-primary" onclick="location.href='submit.html'">Submit</button>
+                        <button type="button" class="btn-primary" onclick="location.href='submit.html'">
+                            Submit
+                        </button>
                     </div>
                 </div>
 
+                <!-- Assignment 2 -->
                 <div class="assignment-card">
                     <h3>Python Basics</h3>
                     <p>Practice loops and functions</p>
+
                     <div class="assignment-footer">
                         <span class="status completed">Completed</span>
-                        <button type="button" class="btn-disabled" disabled>Submitted</button>
+                        <button type="button" class="btn-disabled" disabled>
+                            Submitted
+                        </button>
                     </div>
                 </div>
 
+                <!-- Assignment 3 -->
                 <div class="assignment-card">
                     <h3>Flask API</h3>
                     <p>Create GET &amp; POST APIs</p>
+
                     <div class="assignment-footer">
                         <span class="status pending">Pending</span>
-                        <button type="button" class="btn-primary" onclick="location.href='submit.html'">Submit</button>
+                        <button type="button" class="btn-primary" onclick="location.href='submit.html'">
+                            Submit
+                        </button>
                     </div>
                 </div>
 
             </div>
+
         </div>
 
     </div>
+
 
 </body>
 
