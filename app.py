@@ -27,55 +27,59 @@ def home():
     return {"status": "Assignment API running..."}
 
 
-# Get all assignments
-@app.route("/assignments", methods=["GET"])
-def get_assignments():
-    res = supabase.table("assignments").select("*").execute()
+# ================= ADMIN =================
+# Get all assignments (from creation table)
+
+@app.route("/admin/assignments", methods=["GET"])
+def get_created_assignments():
+    res = supabase.table("creation").select("*").execute()
     return {"assignments": res.data}
 
 
-# Create new assignment
-@app.route("/assignments", methods=["POST"])
-def create_assignment():
+# Add new assignment (admin)
 
+@app.route("/admin/assignments", methods=["POST"])
+def add_assignment():
     data = request.get_json()
 
     if not data or not data.get("title"):
-        return {"error": "title is required"}, 400
-
-    if not data.get("description"):
-        return {"error": "description is required"}, 400
+        return {"error": "title required"}, 400
 
     new_assignment = {
         "title": data["title"],
-        "description": data["description"],
-        "file_url": data.get("file_url", DEFAULT_FILE_URL),
+        "description": data.get("description"),
     }
 
-    res = supabase.table("assignments").insert(new_assignment).execute()
+    res = supabase.table("creation").insert(new_assignment).execute()
+    return res.data
 
-    return res.data, 201
 
-# add new assignment 
+# ================= STUDENT =================
+# Get assignments to show on assignment page
+
 @app.route("/assignments", methods=["GET"])
 def get_assignments():
     res = supabase.table("creation").select("*").execute()
     return {"assignments": res.data}
 
 
-@app.route("/assignments", methods=["POST"])
-def add_assignment():
+# Submit assignment (student)
+
+@app.route("/submit", methods=["POST"])
+def submit_assignment():
     data = request.get_json()
 
-    new_assignment = {
+    if not data.get("title"):
+        return {"error": "title required"}, 400
+
+    new_submission = {
         "title": data["title"],
-        "description": data["description"],
+        "description": data.get("description"),
+        "file_url": data.get("file_url"),
     }
 
-    res = supabase.table("creation").insert(new_assignment).execute()
-
-    return res.data
-
+    res = supabase.table("assignments").insert(new_submission).execute()
+    return res.data, 201
 
 # ---------------- RUN ---------------- #
 if __name__ == "__main__":
