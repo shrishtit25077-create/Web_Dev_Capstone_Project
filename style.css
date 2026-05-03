@@ -756,7 +756,6 @@ button img {
     border: 1px solid #4f46e5;
 }
 
-<<<<<<< Updated upstream
 /* ---------------- SMOOTH UI ---------------- */
 
 body {
@@ -800,9 +799,9 @@ body {
     max-height: 380px; 
     border-radius: 12px;
     margin-top: 10px;
-=======
+}
+
 .form-group textarea {
     resize: none;
     height: 100px;
->>>>>>> Stashed changes
 }
