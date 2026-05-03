@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="icons/logo.png" class="logo-icon" alt="CampusHub logo">
+            <span>CampusHub</span>
+        </div>
+        <div class="menu">
+            <a href="index.html" class="menu-item">
+                <div class="icon-box"><img src="icons/dashboard.png" alt="Dashboard"></div>
+                <span>Dashboard</span>
+            </a>
+            <a href="assignment.html" class="menu-item">
+                <div class="icon-box"><img src="icons/book.png" alt="Assignments"></div>
+                <span>Assignments</span>
+            </a>
+            <a href="coding.html" class="menu-item">
+                <div class="icon-box"><img src="icons/code.png" alt="Coding Lab"></div>
+                <span>Coding Lab</span>
+            </a>
+            <a href="#" class="menu-item">
+                <div class="icon-box"><img src="icons/quiz.png" alt="Quiz Center"></div>
+                <span>Quiz Center</span>
+            </a>
+            <a href="#" class="menu-item">
+                <div class="icon-box"><img src="icons/chart.png" alt="Performance"></div>
+                <span>Performance</span>
+            </a>
+            <a href="#" class="menu-item">
+                <div class="icon-box"><img src="icons/notes.png" alt="Notes"></div>
+                <span>Notes</span>
+            </a>
+            <a href="#" class="menu-item">
+                <div class="icon-box"><img src="icons/calendar.png" alt="Calendar"></div>
+                <span>Calendar</span>
+            </a>
+            <a href="#" class="menu-item">
+                <div class="icon-box"><img src="icons/user.png" alt="Profile"></div>
+                <span>Profile</span>
+            </a>
+            <a href="admin.html" class="menu-item active">
+                <div class="icon-box"><img src="icons/settings.png" alt="Admin"></div>
+                <span>Admin</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <div class="navbar">
+            <div class="search">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+
+        <div class="content">
+            <h2 class="page-title">Admin Portal</h2>
+
+            <!-- Add Assignment Form -->
+            <div class="form-card" style="margin-bottom: 30px;">
+                <h3 style="margin-bottom: 15px;">Add New Assignment</h3>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="newTitle" placeholder="Assignment title">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="newDesc" placeholder="Short description"></textarea>
+                </div>
+
+                <button type="button" class="btn-primary" onclick="addAssignment()">Add Assignment</button>
+            </div>
+
+            <!-- Assignment List -->
+            <h3 style="margin-bottom: 15px;">All Assignments</h3>
+
+            <div id="assignmentList" style="display:flex; flex-direction:column; gap:15px;">
+
+                <div class="assignment-card" id="card-0">
+                    <h3>Web Dev Project</h3>
+                    <p>Build a responsive dashboard UI</p>
+                    <div class="assignment-footer">
+                        <span class="status pending">Pending</span>
+                        <div style="display:flex; gap:8px;">
+                            <button type="button" class="btn-primary" onclick="editAssignment(0)">Edit</button>
+                            <button type="button" class="btn-delete" onclick="deleteAssignment(0)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="assignment-card" id="card-1">
+                    <h3>Python Basics</h3>
+                    <p>Practice loops and functions</p>
+                    <div class="assignment-footer">
+                        <span class="status completed">Completed</span>
+                        <div style="display:flex; gap:8px;">
+                            <button type="button" class="btn-primary" onclick="editAssignment(1)">Edit</button>
+                            <button type="button" class="btn-delete" onclick="deleteAssignment(1)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="assignment-card" id="card-2">
+                    <h3>Flask API</h3>
+                    <p>Create GET &amp; POST APIs</p>
+                    <div class="assignment-footer">
+                        <span class="status pending">Pending</span>
+                        <div style="display:flex; gap:8px;">
+                            <button type="button" class="btn-primary" onclick="editAssignment(2)">Edit</button>
+                            <button type="button" class="btn-delete" onclick="deleteAssignment(2)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <style>
