@@ -103,7 +103,7 @@
 
             <h2 class="page-title">Assignments</h2>
 
-            <div class="assignment-grid">
+            <div class="assignment-grid" id="assignmentGrid">
 
                 <!-- Assignment 1 -->
                 <div class="assignment-card">
@@ -149,6 +149,45 @@
         </div>
 
     </div>
+    <script>
+
+var grid = document.getElementById("assignmentGrid");
+
+fetch("http://127.0.0.1:5001/assignments")
+.then(function(res) {
+    return res.json();
+})
+.then(function(data) {
+
+    var arr = data.assignments;
+
+    for (var i = 0; i < arr.length; i++) {
+
+        var card = document.createElement("div");
+        card.className = "assignment-card";
+
+        var status = "Pending";
+        var button = "<button class='btn-primary'>Submit</button>";
+
+        if (arr[i].file_url) {
+            status = "Completed";
+            button = "<button class='btn-disabled' disabled>Submitted</button>";
+        }
+
+        card.innerHTML =
+            "<h3>" + arr[i].title + "</h3>" +
+            "<p>" + arr[i].description + "</p>" +
+            "<div class='assignment-footer'>" +
+            "<span class='status'>" + status + "</span>" +
+            button +
+            "</div>";
+
+        grid.appendChild(card);
+    }
+
+});
+
+</script>
 
 
 </body>
