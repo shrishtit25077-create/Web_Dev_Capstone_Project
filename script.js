@@ -50,7 +50,7 @@ var logoutBtn = document.querySelectorAll(".icon-btn")[2];
 
 logoutBtn.onclick = function () {
     var confirmLogout = confirm("Do you really want to logout?");
-    
+
     if (confirmLogout) {
         alert("Logout successful!");
     }
@@ -65,10 +65,10 @@ var hour = new Date().getHours();
 
 if (hour < 12) {
     greeting.innerText = "Good Morning, Student ☀️";
-} 
+}
 else if (hour < 18) {
     greeting.innerText = "Good Afternoon, Student 🌤️";
-} 
+}
 else {
     greeting.innerText = "Good Evening, Student 🌙";
 }
@@ -87,4 +87,3 @@ primaryBtn.onclick = function () {
 secondaryBtn.onclick = function () {
     alert("Resuming your quiz...");
 };
-

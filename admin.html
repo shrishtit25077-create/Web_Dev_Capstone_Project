@@ -130,4 +130,48 @@
         </div>
     </div>
 
-    <style>
+    <script>
+        async function addAssignment() {
+
+            const title = document.getElementById("newTitle").value;
+            const description = document.getElementById("newDesc").value;
+
+            if (!title || !description) {
+                alert("Please fill all fields");
+                return;
+            }
+
+            try {
+
+                const response = await fetch("http://127.0.0.1:5001/assignments", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        title: title,
+                        description: description
+                    })
+                });
+
+                const data = await response.json();
+
+                console.log(data);
+
+                alert("Assignment Added Successfully!");
+
+                // clear form
+                document.getElementById("newTitle").value = "";
+                document.getElementById("newDesc").value = "";
+
+            } catch (error) {
+
+                console.log(error);
+                alert("Error adding assignment");
+
+            }
+        }
+    </script>
+</body>
+
+</html>
